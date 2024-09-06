@@ -25,8 +25,11 @@ int main() {
     if (res != 0) {
         printf("Eulerian Tour: ");
         findEulerianTour(graph);
-        printf("\n");
     }
+
+    findHamiltonianCycle(graph);
+
+    renderGraph(graph, "graph.dot", "graph.png");
 
     return 0;
 }
