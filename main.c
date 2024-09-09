@@ -2,15 +2,16 @@
 #include "graph.h"
 
 int main() {
-    int V = 5;
-    struct Graph* graph = createGraph(V);
-    addEdge(graph, 0, 1);
-    addEdge(graph, 0, 4);
-    addEdge(graph, 1, 2);
-    addEdge(graph, 1, 3);
-    addEdge(graph, 1, 4);
-    addEdge(graph, 2, 3);
-    addEdge(graph, 3, 4);
+    int V[] = {0, 1, 2, 3, 4, 5};
+    int E[][2] = {
+        {0, 1}, {1, 2}, {2, 3}, {3, 4}, {4, 5}, {5, 0},
+        {0, 2}, {2, 4}, {4, 0}
+    };
+    int V_size = sizeof(V) / sizeof(V[0]);
+    int E_size = sizeof(E) / sizeof(E[0]);
+
+    struct Graph* graph;
+    createGraphFromSet(V, V_size, E, E_size, &graph);
 
     printGraph(graph);
 
@@ -29,7 +30,7 @@ int main() {
 
     findHamiltonianCycle(graph);
 
-    renderGraph(graph, "graph.dot", "graph.png");
+    renderGraph(graph, "graph2.dot", "graph2.png");
 
     return 0;
 }

@@ -34,4 +34,5 @@ void findEulerianTour(struct Graph* graph);
 int findHamiltonianCycle(struct Graph* graph);
 void generateDOTFile(struct Graph* graph, const char* fileName);
 void renderGraph(struct Graph* graph, const char* dotFileName, const char* outputFileName);
+void createGraphFromSet(int V[], int V_size, int E[][2], int E_size, struct Graph** graph);
 #endif //GRAPH_H
